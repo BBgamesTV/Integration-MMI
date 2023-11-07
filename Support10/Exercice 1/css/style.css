@@ -1,0 +1,30 @@
+h1 {
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+span {
+    color:red;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(85, 84, 84);
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    border-right:solid 1px grey ;
+}
+
+li:hover {
+    background-color: red;
+    color: black;
+}

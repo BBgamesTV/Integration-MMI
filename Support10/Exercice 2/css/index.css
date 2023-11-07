@@ -1,0 +1,137 @@
+@font-face {
+    font-family: tealand;
+    src: url(./tealand/Tealand.ttf);
+}
+
+html {
+    font-family: tealand;
+    overflow-y: hidden;
+}
+
+body {
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    color:black;
+    margin: 15px;
+    font-size: 1.2em;
+}
+
+h1 {
+    color: #FE0083;
+}
+
+header {
+    width: 70%;
+    background-color: black;
+}
+
+.logo {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+/* Main */
+ul {
+    background-color: grey;
+    margin: 0;
+    padding-left: 5px;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: center;
+}
+li {
+    text-align: center;
+    width: 250px;
+}
+a {
+    height: 100%;
+    width: 100%;
+    font-size: 1.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
+ul > li > a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+a:hover {
+    background-color: cyan;
+    color: #384050;
+    transition: all 0.4s;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+
+/* Element Droite*/ 
+aside {
+    padding: 25px;
+    background-color: #FE0083;
+    width: 100%;
+    height: 100%;
+}
+input[type="submit"] {
+    background-color: rgb(105, 105, 248);
+    padding: 15px;
+    text-align: center;
+    margin-top: 5px;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 90%;
+    border-radius: 10px;
+}
+h2 {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1.7em;
+}
+aside > .event {
+    background-color: #FE4DA8;
+    width: 90%;
+    padding: 10px;
+}
+
+
+
+/* Footer */
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: grey;
+}
+footer p {
+    color: white;
+    float: right;
+    padding-right: 15px;
+    margin: 5px;
+}
+
+italic {
+    font-style: italic;
+}
+
+main {
+    display: flex;
+    width: 70%;
+}
