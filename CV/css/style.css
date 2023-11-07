@@ -1,0 +1,126 @@
+
+
+* {
+    margin: 0;
+    background-color: #1A1040;
+    font-weight: bold;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scrollbar-gutter: hidden;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 17%;
+  border-right: 2px solid #F257C9;;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  transition: 0.4s;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #F29D52;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+ul.sidenav li a:hover {
+    background-color: #211159;
+    color: #F26E50;
+    transition: 0.7s;
+}
+
+div.content {
+  margin-left: 19%;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.center {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+.center h1 {
+    font-size: 11em;
+}
+.center span {
+    transition: 0.6s;
+    color: #F29D52;
+}
+
+.center span:hover {
+    color: #F257C9;
+    transition: 0.3s;
+}
+
+.center h3 {
+    font-size: 2em;
+    background: -webkit-linear-gradient(#F29D52, #F257C9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.center h3:hover {
+    color: #F257C9;
+    transition: 0.2s;
+}
+
+.social {
+  margin: 24px 0;
+  padding: 0;
+  font-size: 30px;
+  text-shadow: 0px 1px 2px black;
+  user-select: none;
+}
+
+.social li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+
+.social li a {
+  color: #F257C9;
+  transition: 0.5s;
+}
+
+.social li a:hover {
+  color: #F29D52;
+  transition: 0.2s;
+}
+
+
+@media screen and (max-width: 900px) {
+    ul.sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    ul.sidenav li a {
+      float: left;
+      padding: 15px;
+    }
+    
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    ul.sidenav li a {
+      text-align: center;
+      float: none;
+    }
+    ul.sidenav {
+        border-bottom: 1px solid #777777;
+    }
+  }

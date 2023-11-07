@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/form_contact.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1>Nous sommes la pour vous <span>aider</span></h1>
+
+        <p>N'hésitez pas à nous faire part de votre demande en remplissant le formulaire de contact.<br>Nous vous contacterons le plus rapidement possible</p>
+
+        <form>
+            <label>Votre Email*</label>
+            <input type="email" placeholder="Email" name="email" required>
+            <br>
+            <label>Votre Telephone</label>
+            <input type="number" placeholder="N°" name="tel" minlength="10" maxlength="10">
+            <br>
+            <label>Votre Message</label>
+            <textarea name="msg"></textarea>
+            <br>
+            <p>En acceptant notre <a href="#">politique de confidentialité</a>,vous acceptez la récolte d'informations pour le bon traitement de votre demande.*<br>
+            <input type="checkbox"><label id="chk_box">Acceptez les conditions d'utilisation</label></p>
+            <br>
+            <input type="submit" placeholder="Envoyez" name="submit">
+            <p id="cap">protection par reCAPTCHA<br><a id="ama" href="#">confidentialité</a> - <a id="ama" href="#">Conditions</a></p>
+        </form>
+    
+    </body>
+</html>
