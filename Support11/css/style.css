@@ -1,0 +1,94 @@
+body {
+    color: black;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+nav {
+    width: 100%;
+}
+
+nav li {
+    font-size: 1.75em;
+    background-color: aqua;
+    list-style: none;
+    width: 100%;
+    transition: 1sec;
+    padding: 5px;
+    text-align: center;
+}
+nav ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    text-decoration: none;
+    text-align: center;
+}
+
+nav li:hover{
+    background: royalblue;
+    transition: 0.4s;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main h1 {
+    font-size: 3em;
+}
+main p {
+    font-size: 1.5em;
+}
+
+div {
+    padding: 5px;
+}
+
+.intro {
+    width: 75%;
+    padding: 8px;
+}
+
+.edito {
+    background: grey;
+    padding: 1%;
+    margin: 1%;
+    width: 20%;
+}
+
+.guide {
+    background: grey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 25px;
+}
+.guide h1 {
+    width: 100%;
+}
+.guide p {
+    width: 80%;
+    padding: 10px;
+}
+.guide img {
+    transform: translateY(-50px);
+    margin: 10px;
+}
+
+.guide br {
+    content: "";
+    display: block;
+    margin-bottom: 3em;
+}
