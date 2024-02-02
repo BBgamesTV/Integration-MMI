@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.first {
+    background-image: url("../téléchargé.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.first h1 {
+    background: black;
+    padding: 12px 24px;
+    font-size: 3em;
+}
+
+div {
+    position: relative;
+    height: 300px;
+    border: solid 1px white;
+}
+
+.box p{
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 30%;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    justify-items: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.about > p {
+    width: 100%;
+}
+
+.about {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: fit-content;
+    padding: 8px 12px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    justify-items: center;
+}
+
+.box2 {
+    position: relative;
+}
+
+.box2 a {
+    background: grey;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
