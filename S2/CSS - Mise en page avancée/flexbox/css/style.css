@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    width: 500px;
+}
+
+figure {
+    width: 400px;
+    height: 250px;
+    border: solid 1px white;
+    padding: 5px;
+    border-radius: 2px;
+}
+figcaption {
+    margin-top: 25px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center
+}
+
+.fig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+td {
+  padding: 10px 15px;
+  border: double 1px white;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+.rond {
+    border-radius: 50px;
+    position: absolute;
+    background: yellowgreen;
+    height: 70px;
+    text-align: center;
+    width: 70px;
+    transform: translate(-210px,-100px)
+}
