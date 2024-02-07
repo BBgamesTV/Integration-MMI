@@ -86,6 +86,9 @@ img {
     justify-content: center;
 }
 
+.box2 a:hover {
+    color: #0077b6;
+}
 
 
 footer {
