@@ -128,7 +128,7 @@ footer {
 .header {
     margin: 0;
     position: fixed;
-    background: black;
+    background: rgba(0, 0, 0,0.8);
     height: 95px;
     width: 100%;
     display: flex;
