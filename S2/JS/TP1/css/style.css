@@ -1,0 +1,21 @@
+body {
+    background: #000000;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.box {
+    border: solid saddlebrown 2px;
+    padding: 5px;
+    margin: 15px;
+}
+
+.custom-alert {
+    color: blue;
+    background-color: red;
+}
+
+span {
+    color: blue;
+}
