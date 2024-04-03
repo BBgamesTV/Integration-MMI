@@ -1,12 +1,9 @@
 
-console.log(document.getElementById('sect1'));
+console.log(document.getElementById('#sect1'));
 
-let intros = document.getElementsByClassName('introduction');
-for (let i = 0; i < intros.length; i++) {
-  console.log(intros[i]);
-}
+console.log(document.getElementsByClassName('pIntro'));
 
-let premierParagraphe = document.querySelector('article p');
+let premierParagraphe = document.querySelector('article.p');
 console.log(premierParagraphe);
 
 

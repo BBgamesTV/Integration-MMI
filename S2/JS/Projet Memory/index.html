@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Memory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div id="container" class="container"></div>
+    
+        <script>
+            const cards = ['♠️', '♣️', '♥️', '♦️'];
+            const shuffledCards = cards.concat(cards).sort(() => 0.5 - Math.random());
+
+            let firstCard = null;
+            let secondCard = null;
+            let flippedCards = 0;
+
+            const gameBoard = document.getElementById('container')
+
+            shuffledCards.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+                cardElement.textContent = card;
+                cardElement.id=card;
+                cardElement.addEventListener('click', () => flipCard(cardElement));
+                gameBoard.appendChild(cardElement);
+            });
+
+            function flipCard(cardElement) {
+                if (cardElement === firstCard) return;
+
+                cardElement.textContent = cardElement.textContent.trim();
+
+                if (!firstCard || !secondCard) {
+                    firstCard = firstCard || cardElement;
+                    secondCard = cardElement === firstCard? null : cardElement;
+                }
+
+                console.log("1 : "+firstCard.textContent);
+                firstCard.style.color= "white";
+                console.log("2 : "+secondCard.textContent);
+                secondCard.style.color= "white";
+
+                if (firstCard && secondCard) {
+                    const isMatch = firstCard.textContent === secondCard.textContent;
+                    console.log("ça bez : "+isMatch)
+                    if (isMatch) {
+                        flippedCards += 2;
+                        firstCard.removeEventListener('click', flipCard);
+                        secondCard.removeEventListener('click', flipCard);
+                        firstCard.style.opacity= "0.2"
+                        secondCard.style.opacity= "0.2"
+                        firstCard = null;
+                        secondCard = null;
+                    } else {
+                        setTimeout(() => {
+                            firstCard.style.color= "#17191F";
+                            secondCard.style.color= "#17191F";
+                            firstCard = null;
+                            secondCard = null;
+                        },1000);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Memory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="card" data-card="1" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">A</div>
+            </div>
+            <div class="card" data-card="2" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">B</div>
+            </div>
+            <div class="card" data-card="3" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">C</div>
+            </div>
+            <div class="card" data-card="4" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">D</div>
+            </div>
+            <div class="card" data-card="5" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">E</div>
+            </div>
+            <div class="card" data-card="6" onclick="flipCard(this)">
+                <div class="front">?</div>
+                <div class="back">F</div>
+            </div>
+        </div>
+    <script>
+        let firstCard, secondCard;
+
+        function flipCard(card) {
+            if (card.classList.contains("flipped") || card.classList.contains("matched")) {
+                return;
+            }
+
+            if (!firstCard) {
+                firstCard = card;
+                card.classList.add("flipped");
+                return;
+            }
+
+            secondCard = card;
+            card.classList.add("flipped");
+
+            if (console.log(firstCard.dataset.card) === secondCard.dataset.card) {
+                firstCard.classList.add("matched");
+                secondCard.classList.add("matched");
+                firstCard = null;
+                secondCard = null;
+                return;
+            }
+
+            setTimeout(() => {
+                firstCard.classList.remove("flipped");
+                secondCard.classList.remove("flipped");
+                firstCard = null;
+                secondCard = null;
+            }, 1000);
+        }
+    </script>
+    </body>
+</html>
