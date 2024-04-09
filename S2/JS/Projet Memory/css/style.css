@@ -6,18 +6,25 @@ body {
     height: 100vh;
     font-family: sans-serif;
     user-select: none;
+    color: white;
+    flex-direction: column;
   }
   
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
+    width: 700px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #score {
+    font-size: 2em;
   }
   
-  .card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
+  .card, .found {
+    width: 90px;
+    height: 125px;
     margin: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -29,9 +36,10 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  
-  .card.flipped {
-    transform: rotateY(180deg);
+
+  .found {
+    opacity: 0.2;
+    cursor:not-allowed;
   }
   
   .card:hover {
@@ -53,3 +61,20 @@ body {
       height: calc(33.333% - 10px);
     }
   }
+
+button {
+  border: 1px solid #ccc;
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: #17191F;
+  color: white;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: white;
+  border: 1px solid #17191F;
+  color: black;
+  transition: 0.7s;
+  cursor: pointer;
+}

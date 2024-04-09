@@ -7,19 +7,25 @@
         <link href="./css/style.css" rel="stylesheet">
     </head>
     <body>
-
+        <h1>Bastien Memory</h1>
+        <h2>Score: </h2>
+        <p id="score"></p>
         <div id="container" class="container"></div>
-    
+        <button onclick="newGame()">Recommencer</button>
         <script>
-            const cards = ['♠️', '♣️', '♥️', '♦️'];
+            const cards = ['♠️', '♣️', '♥️', '♦️','1','2','3','4'];
             const shuffledCards = cards.concat(cards).sort(() => 0.5 - Math.random());
+            const scoreboard = document.getElementById('score');
+            scoreboard.textContent = 0;
+            
+            let clicks = 0;
 
             let firstCard = null;
             let secondCard = null;
             let flippedCards = 0;
-
+    
             const gameBoard = document.getElementById('container')
-
+    
             shuffledCards.forEach(card => {
                 const cardElement = document.createElement('div');
                 cardElement.classList.add('card');
@@ -32,6 +38,12 @@
             function flipCard(cardElement) {
                 if (cardElement === firstCard) return;
 
+                if (cardElement.classList.value === 'found') return;
+                clicks++;
+                scoreboard.textContent = clicks;
+
+
+
                 cardElement.textContent = cardElement.textContent.trim();
 
                 if (!firstCard || !secondCard) {
@@ -39,20 +51,21 @@
                     secondCard = cardElement === firstCard? null : cardElement;
                 }
 
-                console.log("1 : "+firstCard.textContent);
                 firstCard.style.color= "white";
-                console.log("2 : "+secondCard.textContent);
                 secondCard.style.color= "white";
 
                 if (firstCard && secondCard) {
                     const isMatch = firstCard.textContent === secondCard.textContent;
-                    console.log("ça bez : "+isMatch)
                     if (isMatch) {
                         flippedCards += 2;
-                        firstCard.removeEventListener('click', flipCard);
-                        secondCard.removeEventListener('click', flipCard);
-                        firstCard.style.opacity= "0.2"
-                        secondCard.style.opacity= "0.2"
+                        console.log(firstCard.removeEventListener('click', flipCard));
+                        console.log(secondCard.removeEventListener('click', flipCard));
+                        firstCard.classList.add('found');
+                        firstCard.classList.remove('card');
+                        firstCard.onclick = null; 
+                        secondCard.classList.add('found');
+                        secondCard.classList.remove('card')
+                        secondCard.onclick = null; 
                         firstCard = null;
                         secondCard = null;
                     } else {
@@ -61,9 +74,13 @@
                             secondCard.style.color= "#17191F";
                             firstCard = null;
                             secondCard = null;
-                        },1000);
+                        },1500);
                     }
                 }
+            }
+
+            function newGame() {
+                location.reload();
             }
         </script>
     </body>
