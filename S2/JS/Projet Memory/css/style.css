@@ -1,66 +1,72 @@
 body {
-    background-color: #17191F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
-    user-select: none;
-    color: white;
-    flex-direction: column;
-  }
+  background-color: #17191F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  user-select: none;
+  color: white;
+  flex-direction: column;
+}
   
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 700px;
-    align-content: center;
-    justify-content: center;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  align-content: center;
+  justify-content: center;
+}
 
-  #score {
-    font-size: 2em;
-  }
-  
-  .card, .found {
-    width: 90px;
-    height: 125px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: #17191F;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+div {
+  margin: 5px;
+}
 
-  .found {
-    opacity: 0.2;
-    cursor:not-allowed;
-  }
+#score {
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+}
   
-  .card:hover {
+.card, .found {
+  width: 90px;
+  height: 125px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #17191F;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.found {
+  opacity: 0.2;
+  cursor:not-allowed;
+}
+  
+.card:hover {
     transform: scale(1.1);
-  }
+}
   
-  .card:active {
+.card:active {
     transform: scale(0.9);
   }
   
-  @media (max-width: 600px) {
-    .container {
-      width: 300px;
-      height: 300px;
-    }
-  
-    .card {
-      width: calc(33.333% - 10px);
-      height: calc(33.333% - 10px);
-    }
+@media (max-width: 600px) {
+  .container {
+    width: 300px;
+    height: 300px;
   }
+  
+  .card {
+    width: calc(33.333% - 10px);
+    height: calc(33.333% - 10px);
+  }
+}
 
 button {
   border: 1px solid #ccc;
@@ -77,4 +83,13 @@ button:hover {
   color: black;
   transition: 0.7s;
   cursor: pointer;
+}
+
+option, select {
+  border: 1px solid #ccc;
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: #17191F;
+  color: white;
+  font-weight: bold;
 }

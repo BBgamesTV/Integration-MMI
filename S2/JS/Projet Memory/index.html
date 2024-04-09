@@ -1,39 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Memory</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Bastien Memory</h1>
-        <h2>Score: </h2>
-        <p id="score"></p>
-        <div id="container" class="container"></div>
-        <button onclick="newGame()">Recommencer</button>
-        <script>
-            const cards = ['♠️', '♣️', '♥️', '♦️','1','2','3','4'];
+
+<head>
+    <title>Memory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Bastien Memory</h1>
+    <select id="niveau">
+        <option value="niveau1">Niveau 1 - 4 Cartes</option>
+        <option value="niveau2">Niveau 2 - 6 Cartes</option>
+        <option value="niveau3">Niveau 3 - 8 Cartes</option>
+        <option value="niveau4">Niveau 4 - 10 Cartes</option>
+        <option value="niveau5">Niveau 5 - 12 Cartes</option>
+        <option value="niveau6">Niveau 6 - 14 Cartes</option>
+    </select>
+    <button onclick="choixLvl()">Jouer !</button>
+    <h2>Score:</h2>
+    <p id="score"></p>
+    <div id="container" class="container"></div>
+    <button onclick="newGame()">Recommencer</button>
+
+    <script>
+
+        function choixLvl() {
+            var niveauSelect = document.getElementById("niveau").value;
+            if(niveauSelect === 'niveau1'){
+                console.log("1");
+                init(1);
+            } else if (niveauSelect === 'niveau2'){
+                console.log("2");
+                init(2);
+            } else if (niveauSelect === 'niveau3'){
+                console.log("3");
+                init(3);
+            } else if (niveauSelect === 'niveau4'){
+                console.log("4");
+                init(4);
+            } else if (niveauSelect === 'niveau5'){
+                console.log("5");
+                init(5);
+            } else if (niveauSelect === 'niveau6'){
+                console.log("6");
+                init(6);
+            }
+        }
+
+        
+        function getNumberOfCards(level) {
+            return 4 + (level - 1) * 2;
+        }
+
+        function init(level) {
+            const cards = Array(getNumberOfCards(level)).fill().map((_, i) => i + 1);
+            console.log(cards);
             const shuffledCards = cards.concat(cards).sort(() => 0.5 - Math.random());
             const scoreboard = document.getElementById('score');
             scoreboard.textContent = 0;
-            
+
             let clicks = 0;
 
             let firstCard = null;
             let secondCard = null;
             let flippedCards = 0;
-    
+
             const gameBoard = document.getElementById('container')
-    
+
             shuffledCards.forEach(card => {
                 const cardElement = document.createElement('div');
                 cardElement.classList.add('card');
                 cardElement.textContent = card;
-                cardElement.id=card;
+                cardElement.id = card;
                 cardElement.addEventListener('click', () => flipCard(cardElement));
                 gameBoard.appendChild(cardElement);
             });
+        
+        
 
             function flipCard(cardElement) {
                 if (cardElement === firstCard) return;
@@ -48,11 +93,11 @@
 
                 if (!firstCard || !secondCard) {
                     firstCard = firstCard || cardElement;
-                    secondCard = cardElement === firstCard? null : cardElement;
+                    secondCard = cardElement === firstCard ? null : cardElement;
                 }
 
-                firstCard.style.color= "white";
-                secondCard.style.color= "white";
+                firstCard.style.color = "white";
+                secondCard.style.color = "white";
 
                 if (firstCard && secondCard) {
                     const isMatch = firstCard.textContent === secondCard.textContent;
@@ -62,26 +107,30 @@
                         console.log(secondCard.removeEventListener('click', flipCard));
                         firstCard.classList.add('found');
                         firstCard.classList.remove('card');
-                        firstCard.onclick = null; 
+                        firstCard.onclick = null;
                         secondCard.classList.add('found');
                         secondCard.classList.remove('card')
-                        secondCard.onclick = null; 
+                        secondCard.onclick = null;
                         firstCard = null;
                         secondCard = null;
                     } else {
                         setTimeout(() => {
-                            firstCard.style.color= "#17191F";
-                            secondCard.style.color= "#17191F";
+                            firstCard.style.color = "#17191F";
+                            secondCard.style.color = "#17191F";
                             firstCard = null;
                             secondCard = null;
-                        },1500);
+                        }, 1500);
                     }
                 }
             }
+        }
 
-            function newGame() {
-                location.reload();
-            }
-        </script>
-    </body>
+
+
+        function newGame() {
+            location.reload();
+        }
+    </script>
+</body>
+
 </html>
