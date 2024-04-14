@@ -1,10 +1,17 @@
+// Exercice 2
 
-document.querySelector('h1').textContent = "C’est le titre de ma première section";
-var monArt = document.querySelector('article');
-document.body.appendChild(monArt);
-document.body.appendChild(monArt);
+// 2. Modifiez le titre de premier niveau.
+const titreH1 = document.querySelector('h1');
+titreH1.textContent = "C’est le titre de ma première section";
 
-var monPara = document.createElement("p");
-monPara.textContent = "Coucou c’est moi le dernier paragraphe créé en JS. \nJe suis heureux d’être là!";
-monPara.style.fontWeight = "bold";
+const monArt = document.querySelector('#sect1 article');
+
+const newP = document.createElement('p');
+newP.textContent = monArt.outerHTML;
+document.body.appendChild(newP);
+
+const monPara = document.createElement("p");
 monArt.appendChild(monPara);
+
+monPara.innerHTML = '<strong>Coucou c’est moi le dernier paragraphe créé en JS.</strong><br>Je suis heureux d’être là !';
+

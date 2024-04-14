@@ -1,19 +1,19 @@
+// 1. Afficher dans la console l’élément dont l’id est sect1 (2 solutions attendues).
 
-console.log(document.getElementById('#sect1'));
+// Solution 1 : Utilisation de document.getElementById()
+const sectionById = document.getElementById('sect1');
+console.log('Solution 1 :', sectionById);
 
-console.log(document.getElementsByClassName('pIntro'));
+// Solution 2 : Utilisation de document.querySelector() avec un sélecteur d'attribut
+const sectionByQuery = document.querySelector('#sect1');
+console.log('Solution 2 :', sectionByQuery);
 
-let premierParagraphe = document.querySelector('article.p');
-console.log(premierParagraphe);
+// 2. Afficher tous les paragraphes d’introduction.
 
+const intros = document.querySelectorAll('.pIntro');
+console.log('Paragrphes d\'introduction :', intros);
 
-console.log(document.querySelector('#sect1'));
+// 3. N’affichez que le premier paragraphe contenu dans l’article
 
-let intros2 = document.querySelectorAll('.introduction');
-intros2.forEach(paragraphe => {
-  console.log(paragraphe);
-});
-
-
-let premierParagraphe2 = document.querySelector('article p');
-console.log(premierParagraphe2);
+const firstParaInArticle = document.querySelector('#sect1 article p');
+console.log('Premier paragraphe dans l\'article :', firstParaInArticle);
