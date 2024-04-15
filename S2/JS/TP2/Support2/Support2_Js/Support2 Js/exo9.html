@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exo 9</title>
+</head>
+<body>
+  <div id="diaporama">
+    <img src="images/070465321693-web-tete.jpg" alt="Image 1">
+    <img src="images/A-10_Thunderbolt_9875.jpg" alt="Image 2">
+    <img src="images/Avion3.jpg" alt="Image 3">
+    <img src="images/Avion4.png" alt="Image 4">
+  </div>
+  <button id="precedent">&#10094;</button>
+  <button id="suivant">&#10095;</button>
+</body>
+</html>
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#diaporama {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#diaporama img {
+  display: none;
+}
+
+#diaporama img.active {
+  display: block;
+}
+
+#precedent, #suivant {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+
+<script src="exo9.js"></script>
